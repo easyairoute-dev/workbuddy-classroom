@@ -10,8 +10,12 @@
 
 ## Skill 入门与实操
 
-- [远帆会议原文（TXT）](https://easyairoute-dev.github.io/workbuddy-classroom/files/%E5%BC%82%E5%B8%B8%E6%A0%B7%E4%BE%8B_%E7%BC%BA%E5%A4%B1%E5%86%B2%E7%AA%81.txt)　两轮演示都打开这份文字，按 E02、E03、E04、E06 找原话。
-- [原版会议 Skill（ZIP）](https://easyairoute-dev.github.io/workbuddy-classroom/files/meeting-delivery.zip)　先导入 WorkBuddy，看看它怎样区分要做的事和讨论中的建议。
+[打开四轮交班练习，复制提示词](https://easyairoute-dev.github.io/workbuddy-classroom/#skill)。先完成交班单，再打包技能并换材料试用。
+
+以下为会议技能目录示例及课后参考。
+
+- [远帆会议原文（TXT）](https://easyairoute-dev.github.io/workbuddy-classroom/files/%E5%BC%82%E5%B8%B8%E6%A0%B7%E4%BE%8B_%E7%BC%BA%E5%A4%B1%E5%86%B2%E7%AA%81.txt)　会议目录示例的参考文字。
+- [原版会议 Skill（ZIP）](https://easyairoute-dev.github.io/workbuddy-classroom/files/meeting-delivery.zip)　第 29 页的目录示例。
 - [改写版会议 Skill（ZIP）](https://easyairoute-dev.github.io/workbuddy-classroom/files/meeting-review.zip)　遇到两个截止日期时换用这一版，检查它能否列出两种说法和出处。
 
 ## 体验课数据分析
