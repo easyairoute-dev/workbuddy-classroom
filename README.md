@@ -15,7 +15,7 @@
 以下为会议技能目录示例及课后参考。
 
 - [远帆会议原文（TXT）](https://easyairoute-dev.github.io/workbuddy-classroom/files/%E5%BC%82%E5%B8%B8%E6%A0%B7%E4%BE%8B_%E7%BC%BA%E5%A4%B1%E5%86%B2%E7%AA%81.txt)　会议目录示例的参考文字。
-- [原版会议 Skill（ZIP）](https://easyairoute-dev.github.io/workbuddy-classroom/files/meeting-delivery.zip)　第 29 页的目录示例。
+- [原版会议 Skill（ZIP）](https://easyairoute-dev.github.io/workbuddy-classroom/files/meeting-delivery.zip)　课堂展示的会议技能目录示例。
 - [改写版会议 Skill（ZIP）](https://easyairoute-dev.github.io/workbuddy-classroom/files/meeting-review.zip)　遇到两个截止日期时换用这一版，检查它能否列出两种说法和出处。
 
 ## 体验课数据分析
