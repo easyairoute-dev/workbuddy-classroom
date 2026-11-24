@@ -10,11 +10,11 @@
 
 它辅助律师管理自己的节奏和案件，不是办案 AI：
 
-• 帮你记住&quot;今天必须处理什么&quot;，逾期的、卡住的自动标红；
+• 帮你记住"今天必须处理什么"，逾期的、卡住的自动标红；
 
 • 帮你把案件、材料、沟通、费用、结案这些零散信息归到一个地方；
 
-• 期限功能只做日期口径计算和留痕，标明&quot;是按哪条法条算的&quot;，不核验法条现行有效性，不下法律结论；
+• 期限功能只做日期口径计算和留痕，标明"是按哪条法条算的"，不核验法条现行有效性，不下法律结论；
 
 • 语气和文案要专业但不端着，像一个懂行的助理，不是法条朗读机。
 
@@ -36,7 +36,7 @@
 
 • 页面里如果有写死的旧表名、旧字段名对照，一并改掉。
 
-• 上面那个 `SzxUKEGvb1eaLK24F9SX2u` 只用来帮你识别&quot;这就是要替换的东西&quot;，不要去查询它——它是别人账号下的表，你一查就是权限错误。
+• 上面那个 `SzxUKEGvb1eaLK24F9SX2u` 只用来帮你识别"这就是要替换的东西"，不要去查询它——它是别人账号下的表，你一查就是权限错误。
 
 情况 B｜能打开，但读不到源码（只能看） → 照它的布局、配色、交互自己做，功能清单以本提示词第三、六节为准，不要漏项。
 
@@ -106,7 +106,8 @@
 
 • 每个事务有「打开档案」按钮，点开是四栏：文档与证据 / 沟通记录 / 费用台账 / 结案归档与沉淀，每栏标题显示材料数量；材料卡片显示文件名、材料类型、版本、登记日期、是否提交法院、备注。备注里含「提交 待确认」的，显示成「提交状态：待确认」
 
-• 档案弹层里有：「刷新材料清单」「复制归档指令」两个按钮（本期只要按钮在、点了有合理提示即可，不用真的连本机目录）
+• 点「打开档案」先显示当前事务名称。材料为零时显示四栏各 0 份和「暂无材料」。有材料时按「文档与证据」表中的事务ID筛选，按档案栏目分栏，同一份材料只计一次。独立登记的沟通、费用等业务记录按各自的表展示，与归档文件的数量区分。
+• 「刷新材料清单」重新查询绑定的在线表，保持正在查看的事务。「复制归档指令」一键复制可发给桌面 WorkBuddy 的指令：请用已配置的归档技能将随附材料归入 Obsidian，归档成功后增量同步到本工作台，回报事务名称和新增材料数。若从某个档案发起，附本事务名称及在线记录 ID 供技能核对。
 
 5）每周复盘
 
@@ -174,23 +175,23 @@
 
 ```json
   [
-  {&quot;类别&quot;:&quot;期限规则&quot;,&quot;键名&quot;:&quot;sx3&quot;,&quot;值&quot;:&quot;{\&quot;key\&quot;: \&quot;sx3\&quot;, \&quot;name\&quot;: \&quot;民事诉讼时效 · 3年（民法典第188条）\&quot;, \&quot;unit\&quot;: \&quot;y\&quot;, \&quot;n\&quot;: 3, \&quot;from\&quot;: \&quot;自权利人知道或应当知道权利受损及义务人之日起\&quot;, \&quot;auto\&quot;: true, \&quot;law\&quot;: \&quot;民法典第188条\&quot;, \&quot;exception\&quot;: \&quot;最长保护期20年；有中断、中止事由需重新起算\&quot;, \&quot;verify\&quot;: \&quot;\&quot;}&quot;,&quot;备注&quot;:&quot;民事诉讼时效 · 3年（民法典第188条）｜自动计算｜民法典第188条｜仅说明按哪条算，不核验法条现行有效性&quot;},
-  {&quot;类别&quot;:&quot;期限规则&quot;,&quot;键名&quot;:&quot;appeal_j&quot;,&quot;值&quot;:&quot;{\&quot;key\&quot;: \&quot;appeal_j\&quot;, \&quot;name\&quot;: \&quot;上诉期 · 一审判决 15日（民诉法）\&quot;, \&quot;unit\&quot;: \&quot;d\&quot;, \&quot;n\&quot;: 15, \&quot;from\&quot;: \&quot;自判决书送达之日起\&quot;, \&quot;auto\&quot;: true, \&quot;law\&quot;: \&quot;民事诉讼法\&quot;, \&quot;exception\&quot;: \&quot;送达日不计入；末日节假日顺延\&quot;, \&quot;verify\&quot;: \&quot;\&quot;}&quot;,&quot;备注&quot;:&quot;上诉期 · 一审判决 15日（民诉法）｜自动计算｜民事诉讼法｜仅说明按哪条算，不核验法条现行有效性&quot;},
-  {&quot;类别&quot;:&quot;期限规则&quot;,&quot;键名&quot;:&quot;appeal_c&quot;,&quot;值&quot;:&quot;{\&quot;key\&quot;: \&quot;appeal_c\&quot;, \&quot;name\&quot;: \&quot;上诉期 · 裁定 10日（民诉法）\&quot;, \&quot;unit\&quot;: \&quot;d\&quot;, \&quot;n\&quot;: 10, \&quot;from\&quot;: \&quot;自裁定书送达之日起\&quot;, \&quot;auto\&quot;: true, \&quot;law\&quot;: \&quot;民事诉讼法\&quot;, \&quot;exception\&quot;: \&quot;送达日不计入；末日节假日顺延\&quot;, \&quot;verify\&quot;: \&quot;\&quot;}&quot;,&quot;备注&quot;:&quot;上诉期 · 裁定 10日（民诉法）｜自动计算｜民事诉讼法｜仅说明按哪条算，不核验法条现行有效性&quot;},
-  {&quot;类别&quot;:&quot;期限规则&quot;,&quot;键名&quot;:&quot;exec&quot;,&quot;值&quot;:&quot;{\&quot;key\&quot;: \&quot;exec\&quot;, \&quot;name\&quot;: \&quot;申请执行时效 · 2年（民诉法）\&quot;, \&quot;unit\&quot;: \&quot;y\&quot;, \&quot;n\&quot;: 2, \&quot;from\&quot;: \&quot;自法律文书规定履行期间最后一日起\&quot;, \&quot;auto\&quot;: true, \&quot;law\&quot;: \&quot;民事诉讼法\&quot;, \&quot;exception\&quot;: \&quot;适用中止中断\&quot;, \&quot;verify\&quot;: \&quot;\&quot;}&quot;,&quot;备注&quot;:&quot;申请执行时效 · 2年（民诉法）｜自动计算｜民事诉讼法｜仅说明按哪条算，不核验法条现行有效性&quot;},
-  {&quot;类别&quot;:&quot;期限规则&quot;,&quot;键名&quot;:&quot;labor&quot;,&quot;值&quot;:&quot;{\&quot;key\&quot;: \&quot;labor\&quot;, \&quot;name\&quot;: \&quot;劳动仲裁时效 · 1年\&quot;, \&quot;unit\&quot;: \&quot;y\&quot;, \&quot;n\&quot;: 1, \&quot;from\&quot;: \&quot;自知道或应当知道权利被侵害之日起\&quot;, \&quot;auto\&quot;: true, \&quot;law\&quot;: \&quot;劳动争议调解仲裁法第27条\&quot;, \&quot;exception\&quot;: \&quot;劳动关系存续期间拖欠劳动报酬不受1年限制\&quot;, \&quot;verify\&quot;: \&quot;\&quot;}&quot;,&quot;备注&quot;:&quot;劳动仲裁时效 · 1年｜自动计算｜劳动争议调解仲裁法第27条｜仅说明按哪条算，不核验法条现行有效性&quot;},
-  {&quot;类别&quot;:&quot;期限规则&quot;,&quot;键名&quot;:&quot;admin_rev&quot;,&quot;值&quot;:&quot;{\&quot;key\&quot;: \&quot;admin_rev\&quot;, \&quot;name\&quot;: \&quot;行政复议申请 · 60日\&quot;, \&quot;unit\&quot;: \&quot;d\&quot;, \&quot;n\&quot;: 60, \&quot;from\&quot;: \&quot;自知道或应当知道行政行为之日起\&quot;, \&quot;auto\&quot;: true, \&quot;law\&quot;: \&quot;行政复议法\&quot;, \&quot;exception\&quot;: \&quot;不可抗力可扣除\&quot;, \&quot;verify\&quot;: \&quot;\&quot;}&quot;,&quot;备注&quot;:&quot;行政复议申请 · 60日｜自动计算｜行政复议法｜仅说明按哪条算，不核验法条现行有效性&quot;},
-  {&quot;类别&quot;:&quot;期限规则&quot;,&quot;键名&quot;:&quot;admin_sue&quot;,&quot;值&quot;:&quot;{\&quot;key\&quot;: \&quot;admin_sue\&quot;, \&quot;name\&quot;: \&quot;行政诉讼起诉 · 6个月\&quot;, \&quot;unit\&quot;: \&quot;m\&quot;, \&quot;n\&quot;: 6, \&quot;from\&quot;: \&quot;自知道或应当知道作出行政行为之日起\&quot;, \&quot;auto\&quot;: true, \&quot;law\&quot;: \&quot;行政诉讼法第46条\&quot;, \&quot;exception\&quot;: \&quot;最长保护期另有规定\&quot;, \&quot;verify\&quot;: \&quot;\&quot;}&quot;,&quot;备注&quot;:&quot;行政诉讼起诉 · 6个月｜自动计算｜行政诉讼法第46条｜仅说明按哪条算，不核验法条现行有效性&quot;},
-  {&quot;类别&quot;:&quot;期限规则&quot;,&quot;键名&quot;:&quot;comp2&quot;,&quot;值&quot;:&quot;{\&quot;key\&quot;: \&quot;comp2\&quot;, \&quot;name\&quot;: \&quot;国家赔偿请求 · 2年\&quot;, \&quot;unit\&quot;: \&quot;y\&quot;, \&quot;n\&quot;: 2, \&quot;from\&quot;: \&quot;自知道或应当知道侵权行为之日起\&quot;, \&quot;auto\&quot;: true, \&quot;law\&quot;: \&quot;国家赔偿法第39条\&quot;, \&quot;exception\&quot;: \&quot;被羁押期间不计入\&quot;, \&quot;verify\&quot;: \&quot;\&quot;}&quot;,&quot;备注&quot;:&quot;国家赔偿请求 · 2年｜自动计算｜国家赔偿法第39条｜仅说明按哪条算，不核验法条现行有效性&quot;},
-  {&quot;类别&quot;:&quot;期限规则&quot;,&quot;键名&quot;:&quot;retrial&quot;,&quot;值&quot;:&quot;{\&quot;key\&quot;: \&quot;retrial\&quot;, \&quot;name\&quot;: \&quot;申请再审 · 6个月（不自动计算）\&quot;, \&quot;unit\&quot;: \&quot;m\&quot;, \&quot;n\&quot;: 6, \&quot;from\&quot;: \&quot;自判决、裁定发生法律效力之日起\&quot;, \&quot;auto\&quot;: false, \&quot;law\&quot;: \&quot;民事诉讼法\&quot;, \&quot;exception\&quot;: \&quot;存在例外起算点，须人工确认\&quot;, \&quot;verify\&quot;: \&quot;\&quot;}&quot;,&quot;备注&quot;:&quot;申请再审 · 6个月（不自动计算）｜不自动计算·需人工确认起算点｜民事诉讼法｜仅说明按哪条算，不核验法条现行有效性&quot;},
-  {&quot;类别&quot;:&quot;期限规则&quot;,&quot;键名&quot;:&quot;evid15&quot;,&quot;值&quot;:&quot;{\&quot;key\&quot;: \&quot;evid15\&quot;, \&quot;name\&quot;: \&quot;一审举证期限 · 不少于15日（不自动计算）\&quot;, \&quot;unit\&quot;: \&quot;d\&quot;, \&quot;n\&quot;: 15, \&quot;from\&quot;: \&quot;自举证通知书送达之日起\&quot;, \&quot;auto\&quot;: false, \&quot;law\&quot;: \&quot;民事诉讼证据若干规定\&quot;, \&quot;exception\&quot;: \&quot;以法院指定为准\&quot;, \&quot;verify\&quot;: \&quot;\&quot;}&quot;,&quot;备注&quot;:&quot;一审举证期限 · 不少于15日（不自动计算）｜不自动计算·需人工确认起算点｜民事诉讼证据若干规定｜仅说明按哪条算，不核验法条现行有效性&quot;},
-  {&quot;类别&quot;:&quot;期限规则&quot;,&quot;键名&quot;:&quot;guar6&quot;,&quot;值&quot;:&quot;{\&quot;key\&quot;: \&quot;guar6\&quot;, \&quot;name\&quot;: \&quot;保证期间 · 未约定时6个月（不自动计算）\&quot;, \&quot;unit\&quot;: \&quot;m\&quot;, \&quot;n\&quot;: 6, \&quot;from\&quot;: \&quot;自主债务履行期限届满之日起\&quot;, \&quot;auto\&quot;: false, \&quot;law\&quot;: \&quot;民法典第692条\&quot;, \&quot;exception\&quot;: \&quot;有约定从约定\&quot;, \&quot;verify\&quot;: \&quot;\&quot;}&quot;,&quot;备注&quot;:&quot;保证期间 · 未约定时6个月（不自动计算）｜不自动计算·需人工确认起算点｜民法典第692条｜仅说明按哪条算，不核验法条现行有效性&quot;},
-  {&quot;类别&quot;:&quot;期限规则&quot;,&quot;键名&quot;:&quot;bill&quot;,&quot;值&quot;:&quot;{\&quot;key\&quot;: \&quot;bill\&quot;, \&quot;name\&quot;: \&quot;票据提示付款（不自动计算）\&quot;, \&quot;unit\&quot;: \&quot;d\&quot;, \&quot;n\&quot;: 10, \&quot;from\&quot;: \&quot;自出票日起\&quot;, \&quot;auto\&quot;: false, \&quot;law\&quot;: \&quot;票据法\&quot;, \&quot;exception\&quot;: \&quot;支票10日、见票即付汇票1个月，按票种核对\&quot;, \&quot;verify\&quot;: \&quot;\&quot;}&quot;,&quot;备注&quot;:&quot;票据提示付款（不自动计算）｜不自动计算·需人工确认起算点｜票据法｜仅说明按哪条算，不核验法条现行有效性&quot;},
-  {&quot;类别&quot;:&quot;字典&quot;,&quot;键名&quot;:&quot;事务类型&quot;,&quot;值&quot;:&quot;[\&quot;诉讼\&quot;, \&quot;非诉\&quot;, \&quot;顾问\&quot;, \&quot;行政\&quot;, \&quot;其他\&quot;]&quot;,&quot;备注&quot;:&quot;工作台内置字典，可在配置与备份区维护&quot;},
-  {&quot;类别&quot;:&quot;字典&quot;,&quot;键名&quot;:&quot;案件细分&quot;,&quot;值&quot;:&quot;{\&quot;诉讼\&quot;: [\&quot;民事\&quot;, \&quot;刑事\&quot;, \&quot;行政诉讼\&quot;, \&quot;仲裁\&quot;], \&quot;非诉\&quot;: [\&quot;尽职调查\&quot;, \&quot;合同审查\&quot;, \&quot;合规审查\&quot;], \&quot;顾问\&quot;: [\&quot;常年法律顾问\&quot;, \&quot;日常咨询\&quot;], \&quot;其他\&quot;: [\&quot;其他\&quot;]}&quot;,&quot;备注&quot;:&quot;工作台内置字典，可在配置与备份区维护&quot;},
-  {&quot;类别&quot;:&quot;字典&quot;,&quot;键名&quot;:&quot;程序阶段&quot;,&quot;值&quot;:&quot;{\&quot;诉讼\&quot;: [\&quot;立案审查\&quot;, \&quot;一审\&quot;, \&quot;二审\&quot;, \&quot;再审\&quot;, \&quot;执行\&quot;, \&quot;保全\&quot;, \&quot;鉴定\&quot;, \&quot;已归档\&quot;], \&quot;非诉\&quot;: [\&quot;尽调\&quot;, \&quot;起草\&quot;, \&quot;谈判中\&quot;, \&quot;报告出具\&quot;, \&quot;已归档\&quot;], \&quot;顾问\&quot;: [\&quot;日常服务\&quot;, \&quot;专项服务\&quot;, \&quot;定期巡检\&quot;, \&quot;已归档\&quot;], \&quot;其他\&quot;: [\&quot;已受理\&quot;, \&quot;办理中\&quot;, \&quot;已归档\&quot;]}&quot;,&quot;备注&quot;:&quot;工作台内置字典，可在配置与备份区维护&quot;},
-  {&quot;类别&quot;:&quot;字典&quot;,&quot;键名&quot;:&quot;速记标签&quot;,&quot;值&quot;:&quot;[\&quot;合同审查\&quot;, \&quot;债权催收\&quot;, \&quot;劳动争议\&quot;, \&quot;税务合规\&quot;, \&quot;客户开发\&quot;, \&quot;谈判策略\&quot;]&quot;,&quot;备注&quot;:&quot;工作台内置字典，可在配置与备份区维护&quot;},
-  {&quot;类别&quot;:&quot;配色&quot;,&quot;键名&quot;:&quot;主题&quot;,&quot;值&quot;:&quot;{\&quot;navy\&quot;: \&quot;#16436B\&quot;, \&quot;deep\&quot;: \&quot;#0E2E4C\&quot;, \&quot;green\&quot;: \&quot;#2C6E63\&quot;, \&quot;bg\&quot;: \&quot;#f5f7f6\&quot;}&quot;,&quot;备注&quot;:&quot;深蓝墨绿（默认），工作台外观配置，跨设备一致&quot;}
+  {"类别":"期限规则","键名":"sx3","值":"{\"key\": \"sx3\", \"name\": \"民事诉讼时效 · 3年（民法典第188条）\", \"unit\": \"y\", \"n\": 3, \"from\": \"自权利人知道或应当知道权利受损及义务人之日起\", \"auto\": true, \"law\": \"民法典第188条\", \"exception\": \"最长保护期20年；有中断、中止事由需重新起算\", \"verify\": \"\"}","备注":"民事诉讼时效 · 3年（民法典第188条）｜自动计算｜民法典第188条｜仅说明按哪条算，不核验法条现行有效性"},
+  {"类别":"期限规则","键名":"appeal_j","值":"{\"key\": \"appeal_j\", \"name\": \"上诉期 · 一审判决 15日（民诉法）\", \"unit\": \"d\", \"n\": 15, \"from\": \"自判决书送达之日起\", \"auto\": true, \"law\": \"民事诉讼法\", \"exception\": \"送达日不计入；末日节假日顺延\", \"verify\": \"\"}","备注":"上诉期 · 一审判决 15日（民诉法）｜自动计算｜民事诉讼法｜仅说明按哪条算，不核验法条现行有效性"},
+  {"类别":"期限规则","键名":"appeal_c","值":"{\"key\": \"appeal_c\", \"name\": \"上诉期 · 裁定 10日（民诉法）\", \"unit\": \"d\", \"n\": 10, \"from\": \"自裁定书送达之日起\", \"auto\": true, \"law\": \"民事诉讼法\", \"exception\": \"送达日不计入；末日节假日顺延\", \"verify\": \"\"}","备注":"上诉期 · 裁定 10日（民诉法）｜自动计算｜民事诉讼法｜仅说明按哪条算，不核验法条现行有效性"},
+  {"类别":"期限规则","键名":"exec","值":"{\"key\": \"exec\", \"name\": \"申请执行时效 · 2年（民诉法）\", \"unit\": \"y\", \"n\": 2, \"from\": \"自法律文书规定履行期间最后一日起\", \"auto\": true, \"law\": \"民事诉讼法\", \"exception\": \"适用中止中断\", \"verify\": \"\"}","备注":"申请执行时效 · 2年（民诉法）｜自动计算｜民事诉讼法｜仅说明按哪条算，不核验法条现行有效性"},
+  {"类别":"期限规则","键名":"labor","值":"{\"key\": \"labor\", \"name\": \"劳动仲裁时效 · 1年\", \"unit\": \"y\", \"n\": 1, \"from\": \"自知道或应当知道权利被侵害之日起\", \"auto\": true, \"law\": \"劳动争议调解仲裁法第27条\", \"exception\": \"劳动关系存续期间拖欠劳动报酬不受1年限制\", \"verify\": \"\"}","备注":"劳动仲裁时效 · 1年｜自动计算｜劳动争议调解仲裁法第27条｜仅说明按哪条算，不核验法条现行有效性"},
+  {"类别":"期限规则","键名":"admin_rev","值":"{\"key\": \"admin_rev\", \"name\": \"行政复议申请 · 60日\", \"unit\": \"d\", \"n\": 60, \"from\": \"自知道或应当知道行政行为之日起\", \"auto\": true, \"law\": \"行政复议法\", \"exception\": \"不可抗力可扣除\", \"verify\": \"\"}","备注":"行政复议申请 · 60日｜自动计算｜行政复议法｜仅说明按哪条算，不核验法条现行有效性"},
+  {"类别":"期限规则","键名":"admin_sue","值":"{\"key\": \"admin_sue\", \"name\": \"行政诉讼起诉 · 6个月\", \"unit\": \"m\", \"n\": 6, \"from\": \"自知道或应当知道作出行政行为之日起\", \"auto\": true, \"law\": \"行政诉讼法第46条\", \"exception\": \"最长保护期另有规定\", \"verify\": \"\"}","备注":"行政诉讼起诉 · 6个月｜自动计算｜行政诉讼法第46条｜仅说明按哪条算，不核验法条现行有效性"},
+  {"类别":"期限规则","键名":"comp2","值":"{\"key\": \"comp2\", \"name\": \"国家赔偿请求 · 2年\", \"unit\": \"y\", \"n\": 2, \"from\": \"自知道或应当知道侵权行为之日起\", \"auto\": true, \"law\": \"国家赔偿法第39条\", \"exception\": \"被羁押期间不计入\", \"verify\": \"\"}","备注":"国家赔偿请求 · 2年｜自动计算｜国家赔偿法第39条｜仅说明按哪条算，不核验法条现行有效性"},
+  {"类别":"期限规则","键名":"retrial","值":"{\"key\": \"retrial\", \"name\": \"申请再审 · 6个月（不自动计算）\", \"unit\": \"m\", \"n\": 6, \"from\": \"自判决、裁定发生法律效力之日起\", \"auto\": false, \"law\": \"民事诉讼法\", \"exception\": \"存在例外起算点，须人工确认\", \"verify\": \"\"}","备注":"申请再审 · 6个月（不自动计算）｜不自动计算·需人工确认起算点｜民事诉讼法｜仅说明按哪条算，不核验法条现行有效性"},
+  {"类别":"期限规则","键名":"evid15","值":"{\"key\": \"evid15\", \"name\": \"一审举证期限 · 不少于15日（不自动计算）\", \"unit\": \"d\", \"n\": 15, \"from\": \"自举证通知书送达之日起\", \"auto\": false, \"law\": \"民事诉讼证据若干规定\", \"exception\": \"以法院指定为准\", \"verify\": \"\"}","备注":"一审举证期限 · 不少于15日（不自动计算）｜不自动计算·需人工确认起算点｜民事诉讼证据若干规定｜仅说明按哪条算，不核验法条现行有效性"},
+  {"类别":"期限规则","键名":"guar6","值":"{\"key\": \"guar6\", \"name\": \"保证期间 · 未约定时6个月（不自动计算）\", \"unit\": \"m\", \"n\": 6, \"from\": \"自主债务履行期限届满之日起\", \"auto\": false, \"law\": \"民法典第692条\", \"exception\": \"有约定从约定\", \"verify\": \"\"}","备注":"保证期间 · 未约定时6个月（不自动计算）｜不自动计算·需人工确认起算点｜民法典第692条｜仅说明按哪条算，不核验法条现行有效性"},
+  {"类别":"期限规则","键名":"bill","值":"{\"key\": \"bill\", \"name\": \"票据提示付款（不自动计算）\", \"unit\": \"d\", \"n\": 10, \"from\": \"自出票日起\", \"auto\": false, \"law\": \"票据法\", \"exception\": \"支票10日、见票即付汇票1个月，按票种核对\", \"verify\": \"\"}","备注":"票据提示付款（不自动计算）｜不自动计算·需人工确认起算点｜票据法｜仅说明按哪条算，不核验法条现行有效性"},
+  {"类别":"字典","键名":"事务类型","值":"[\"诉讼\", \"非诉\", \"顾问\", \"行政\", \"其他\"]","备注":"工作台内置字典，可在配置与备份区维护"},
+  {"类别":"字典","键名":"案件细分","值":"{\"诉讼\": [\"民事\", \"刑事\", \"行政诉讼\", \"仲裁\"], \"非诉\": [\"尽职调查\", \"合同审查\", \"合规审查\"], \"顾问\": [\"常年法律顾问\", \"日常咨询\"], \"其他\": [\"其他\"]}","备注":"工作台内置字典，可在配置与备份区维护"},
+  {"类别":"字典","键名":"程序阶段","值":"{\"诉讼\": [\"立案审查\", \"一审\", \"二审\", \"再审\", \"执行\", \"保全\", \"鉴定\", \"已归档\"], \"非诉\": [\"尽调\", \"起草\", \"谈判中\", \"报告出具\", \"已归档\"], \"顾问\": [\"日常服务\", \"专项服务\", \"定期巡检\", \"已归档\"], \"其他\": [\"已受理\", \"办理中\", \"已归档\"]}","备注":"工作台内置字典，可在配置与备份区维护"},
+  {"类别":"字典","键名":"速记标签","值":"[\"合同审查\", \"债权催收\", \"劳动争议\", \"税务合规\", \"客户开发\", \"谈判策略\"]","备注":"工作台内置字典，可在配置与备份区维护"},
+  {"类别":"配色","键名":"主题","值":"{\"navy\": \"#16436B\", \"deep\": \"#0E2E4C\", \"green\": \"#2C6E63\", \"bg\": \"#f5f7f6\"}","备注":"深蓝墨绿（默认），工作台外观配置，跨设备一致"}
   ]
   ```
 
@@ -213,7 +214,7 @@
 
 • `auto: false` 的 4 条（申请再审、一审举证期限、保证期间、票据提示付款）：不自动算，只提示「此口径需人工确认起算点」并列出 `from` 和 `exception`，让用户自己填截止日。
 
-• 每次算出结果，都往「期限计算留痕」表写一行：事项内容、期限类型、起算日、起算依据、适用条文、计算口径（如&quot;按日+15，起算日不计入&quot;）、末日顺延、计算截止日、备注。
+• 每次算出结果，都往「期限计算留痕」表写一行：事项内容、期限类型、起算日、起算依据、适用条文、计算口径（如"按日+15，起算日不计入"）、末日顺延、计算截止日、备注。
 
 • 页面上显示口径时，必须带一句「仅说明按哪条算，不核验法条现行有效性」。
 
@@ -223,7 +224,7 @@
 
 • 精确命中（完全一致）→ 红色标记「疑似冲突：与已知主体完全同名」
 
-• 模糊命中（包含关系，或去掉&quot;有限公司/股份/集团&quot;等后缀后一致，或名称相似度高）→ 橙色标记「需人工核对：名称高度相似」
+• 模糊命中（包含关系，或去掉"有限公司/股份/集团"等后缀后一致，或名称相似度高）→ 橙色标记「需人工核对：名称高度相似」
 
 • 无命中 → 灰色提示「未在主体库中发现同名主体（不代表没有冲突）」
 
@@ -253,13 +254,13 @@
 
 七、技术实现要点（这些是已经踩过的坑，照做能省很多时间）
 
-1. 参考页面的&quot;代码&quot;可以复用，&quot;表&quot;不行（详见前面「开工前，先看这个参考页面」）。跨账号读别人的 databaseId 一定失败，别去试；自己新建 12 张空表最省事。
+1. 参考页面的"代码"可以复用，"表"不行（详见前面「开工前，先看这个参考页面」）。跨账号读别人的 databaseId 一定失败，别去试；自己新建 12 张空表最省事。
 
 2. 建表、加字段、挂表偶尔会返回瞬时错误（50000 / 56057 之类），只重试那一张表/那一个字段，不要整批重来。
 
-3. 批量写入记录时，传入的是属性映射数组（每项直接是 `{&quot;字段名&quot;: 值}`），不是包了 `properties` 的对象。
+3. 批量写入记录时，传入的是属性映射数组（每项直接是 `{"字段名": 值}`），不是包了 `properties` 的对象。
 
-4. 写 select 字段必须用 `{&quot;select&quot;: &quot;选项文字&quot;}` 这种形状；写 multi\_select 用 `{&quot;multi_select&quot;: [&quot;a&quot;,&quot;b&quot;]}`；只传裸字符串选项会写不进去。checkbox 传布尔 `true/false`，number 传数字，date 传 `YYYY-MM-DD`。
+4. 写 select 字段必须用 `{"select": "选项文字"}` 这种形状；写 multi\_select 用 `{"multi_select": ["a","b"]}`；只传裸字符串选项会写不进去。checkbox 传布尔 `true/false`，number 传数字，date 传 `YYYY-MM-DD`。
 
 5. 字段顺序由平台决定、不受你控制，页面里一律按字段名取值，不要按下标取。
 
@@ -268,6 +269,23 @@
 7. 页面里所有查询都要能容忍空结果；12 张表 id 写在一处常量里，方便以后换环境。
 
 8. 页面别追求像素级精致，功能齐、手机上点得动、断网不白屏比好看重要。配色按默认深蓝墨绿即可。
+
+9. 事务列表和档案共用同一个在线记录 ID。资料库页面 SDK 的 query 返回 {results, nextCursor, hasMore}，按游标取完各页。results 中每条是含系统主键 _id 的平铺记录。getRecord({databaseId, recordId}) 的单条记录在返回值的 result 中。读取业务字段前先保留系统主键。统一用一个函数处理所有在线入口，例如：
+
+```js
+function onlineRecordId(row) {
+  if (!row) return '';
+  const value = [row._id, row.record_id, row.id, row.recordId, row.recordIdStr]
+    .find(id =&gt; (typeof id === 'string' || typeof id === 'number') &amp;&amp; String(id).trim() !== '');
+  return value === undefined ? '' : String(value).trim();
+}
+```
+
+列表渲染、按钮传参、缓存索引、刷新恢复、打开档案和更新记录均使用同一规范化字符串。新建记录后从在线表回读系统主键，再开放关联操作。不得用名称、数组序号、随机数或 Obsidian 本地事务ID冒充在线主键。离线临时记录与在线记录分别标识，联网写入后用真实主键更新相关引用。
+
+10. 区分三种 ID：「事务」在线行的 _id 决定打开哪个档案；「文档与证据」等子表的业务字段「事务ID」引用这条在线行的 _id；「材料ID」标识材料，用于归档去重。Obsidian 的本地事务ID由归档技能通过来源映射对应到在线记录。建台阶段无需安装技能，也无需给事务表增加主键列。工作台打开时重读在线表，因此由桌面技能同步进来的记录与页面手工新增的记录走同一个打开入口。
+
+11. 点档案时若缓存未命中，按同一事务表和在线主键重新查询。主键缺失时提示「事务缺少在线记录 ID，请刷新事务列表」；网络、权限、表未绑定或响应格式异常时显示具体读取失败原因和重试入口；只有在线查询确认记录已删除或不存在时才显示「事务不存在」。材料查询失败应显示「材料读取失败」，不能算作零份。复用参考页面源码也要逐条检查本节。
 
 八、执行顺序（按这个来，每步做完跟我说一句）
 
@@ -283,23 +301,23 @@
 
 6. 打开页面自测一遍：六个区都能进、都能读到空表不报错；走 A 的还要确认六个区读的都是新建表（改一条数据，去新表里能看到）。
 
-7. 做第九节的验收，逐项给我实测结果。
+7. 在已发布的资料库工作台，用真实绑定的在线表做第九节验收。重点实点第 1 项，记录刷新前后打开档案的结果，再清理本次临时验收数据。无法操作某一步时，写明「未实测」和原因。
 
 8. 把页面链接发我，再附一段「怎么用」的简短说明（不超过 10 行，说清每天先看哪里、待办怎么加、事务怎么建）。
 
-九、验收（必须真的操作一遍，报数字，不要只说&quot;已完成&quot;）
+九、验收（必须真的操作一遍，报数字，不要只说"已完成"）
 
 # | 验收项 | 合格标准
-1 | 打开页面 | 能看到顶部「今天要处理的」+ 左侧六个导航项，无报错
+1 | 打开页面和事务档案 | 能看到顶部「今天要处理的」和六个导航。在本次新建的在线事务表建两条同名临时事务 A、B，回读不同的 _id。通过页面列表分别点开，先验证 A 的空档案可打开。直接向在线文档与证据表写两份虚构材料关联 A（一份文档、一份沟通），再写一份费用凭证关联 B。刷新工作台再分别实点「打开档案」：A 四栏计数依次为 1/1/0/0，B 为 0/0/1/0；「刷新材料清单」后结果一致。回报两个在线主键和实际计数。若另行联测的库已有「青禾设备采购」，再点开与该库的实际材料逐项核对。
 2 | 新增待办 | 页面加一条 → 打开在线「待办」表能看到这条记录
 3 | 勾选完成 | 表里「是否完成」= true，「完成日期」有值
 4 | 顺延 | 逾期待办点顺延 → 截止日期 +1 天、顺延次数 = 1
 5 | 期限计算 | 选「上诉期·一审判决15日」，起算日填 2026-11-01 → 截止日算出 2026-11-16；同时「期限计算留痕」表新增 1 行
 6 | 不自动计算的口径 | 选「申请再审」→ 提示需人工确认起算点，不给自动结果
 7 | 利冲·精确 | 新增事务，我方客户填主体库里已有的全称 → 红色标记 + 「利冲核查记录」新增 1 行
-8 | 利冲·模糊 | 客户名只差几个字（如去掉&quot;有限公司&quot;）→ 橙色标记
+8 | 利冲·模糊 | 客户名只差几个字（如去掉"有限公司"）→ 橙色标记
 9 | 表结构 | 12 张表逐张核对字段名/类型/选项，与第四节一致，报「12/12 一致」
-10 | 初始数据 | 除配置表 17 行外，其余 11 张表为空（测试数据验完删掉，报「已清理，剩 0 条」）
+10 | 初始数据 | 全新建台交付时配置表有 17 行，其余 11 张表为空。仅按本次创建记录的在线 ID 清理临时验收数据并回读。已有真实数据的复测环境仅核对本次临时记录剩余 0 条，保留原有事务和材料。
 11 | 配色 | 切一套配色 → 刷新后仍是新配色；配置表「主题」的值变了
 12 | 手机 | 375px 宽度下不横向滚动，按钮点得到
 13 | 离线 | 断网改一条 → 显示「待同步 1 条」；联网后进表，且表里不重复
@@ -311,7 +329,7 @@
 
 • 不做案件文书自动生成、不做法律意见输出、不做判决预测。
 
-• 不接本机文件夹、不读 Obsidian 库（这些要另外装能力，第二期再说）。页面里「复制归档指令」按钮保留，点了给出提示即可。
+• 不接本机文件夹、不读 Obsidian 库（这些要另外装能力，第二期再说）。工作台读写在线表，「复制归档指令」按第三节复制，后续由桌面归档技能完成本地文件归档和同步。
 
 • 不做多人协作、不做权限体系（这是个人工作台）。
 
@@ -331,7 +349,7 @@
 
 5. 遗留问题（如果有，说清影响范围）
 
-6. 一段不超过 10 行的「日常怎么用」</textarea></details></div><p class="links"><a href="https://www.workbuddy.cn/" target="_blank" rel="noopener">安装 WorkBuddy</a>　<a href="https://www.workbuddy.cn/space/d/qzDNXr5IVb1WYIXTok4In7?shareId=be50dc4e-8e17-400e-bd82-e545ed772836&amp;activity_share_code=f4b46401e85dac220680b88ea573e19a&amp;ext2=copy_link" target="_blank" rel="noopener">查看讲师提示词原文</a></p><p class="done"><b>完成标志</b>　资料库里能打开你自己的工作台；在页面新建一条待办后，能在【待办】在线表找到它。</p></div></section><section id="step2"><div class="num">2</div><div class="inside"><div class="where">Obsidian 和 WorkBuddy · 技能管理</div><h2>建本地知识库，安装归档技能</h2><p>电脑上打开 Obsidian，选择「创建新库」，取名“课堂知识库”。在库里新建“事务列表”文件夹。同步时选择的库根是“课堂知识库”这一层。</p><p>在 WorkBuddy 打开「技能 → 添加技能 → 上传技能」，选择下载的技能 ZIP。保留 ZIP 格式，安装后在新对话中启用。</p><p class="links"><a href="https://obsidian.md/download" target="_blank" rel="noopener">下载 Obsidian</a>　<a href="https://easyairoute-dev.github.io/workbuddy-classroom/law-workbench/archive-skill.zip" target="_blank" rel="noopener">下载课堂归档技能 ZIP</a></p><p class="done"><b>完成标志</b>　Obsidian 左侧能看见“事务列表”，WorkBuddy 已安装技能中有 obsidian-case-archive。</p></div></section><section id="step3"><div class="num">3</div><div class="inside"><div class="where">WorkBuddy · 已启用技能的对话</div><h2>把知识库连到自己的在线表</h2><p>在已启用技能的对话中，附上<b>你刚建的工作台页面</b>，输入<b>你自己的库根路径</b>（例如 E:\课堂知识库），再粘贴下方指令并发送。</p><div class="copy"><button type="button" data-copy="bind">复制连接与检查指令</button><span class="status" role="status"></span><details><summary>查看或手动复制全文</summary><textarea id="bind" aria-label="复制连接与检查指令全文" readonly spellcheck="false">请配置我已安装的 obsidian-case-archive 课堂版，关联我刚建好的律师工作台和 Obsidian 库。请读取本次对话中我附上的工作台页面，从实际绑定关系核对【事务】【文档与证据】【配置与规则】的表 ID，依次填入 sync_workbench.py 的 MATTERS_DB、DOCS_DB、CFG_DB。找到当前 WorkBuddy 内置 library 技能目录，配置 DEFAULT_LIBRARY。确认本机可用 Python 3.10+ 和 PyYAML 6.x，核对材料ID（文本）及档案栏目（单选）。使用我提供的库根路径运行 --dry-run，报告库路径、三张表名称和读取结果。若我忘了附工作台或库根路径，先问我。</textarea></details></div><p>若提示缺少 Python 或 PyYAML，按学员手册第 2 页安装，然后重试。</p><p class="done"><b>完成标志</b>　WorkBuddy 回报正确的库根路径，并能读到【事务】【文档与证据】【配置与规则】。空库扫描到 0 个项目也正常。</p></div></section><section id="step4"><div class="num">4</div><div class="inside"><div class="where">WorkBuddy · 继续上一步的对话</div><h2>导入五份样例，打开事务档案</h2><p>下载并<b>解压</b>练习材料 ZIP。把里面的 Word、PDF、Excel、PNG 和 TXT 五个文件一起拖入上一步的 WorkBuddy 对话，粘贴下面的指令并发送。</p><p class="links"><a href="https://easyairoute-dev.github.io/workbuddy-classroom/law-workbench/sample-files.zip" target="_blank" rel="noopener">下载五份练习材料 ZIP</a></p><div class="copy"><button type="button" data-copy="archive">复制五份样例归档指令</button><span class="status" role="status"></span><details><summary>查看或手动复制全文</summary><textarea id="archive" aria-label="复制五份样例归档指令全文" readonly spellcheck="false">请用 obsidian-case-archive 把随本条消息发送的五份虚构样例归入“青禾设备采购”。按内容给材料目录起中文名，保留来源和原件。归档成功后，把项目和材料索引同步到我已绑定的在线工作台，从原表回读事务名称、材料数和各栏目数量。重复材料只记一次，保留已有人工分类。</textarea></details></div><p class="done"><b>完成标志</b>　刷新工作台，进入【事务跟进 → 事务列表 → 青禾设备采购 → 打开档案】。首次在空库应看到 5 份材料，电话记录在【沟通记录】。</p></div></section><details class="extra"><summary>选做：完善档案分栏和日历</summary><p>已有工作台需要调整「打开档案」或日历时，在原工作台的编辑对话粘贴下面的指令。</p><div class="copy"><button type="button" data-copy="follow">复制看板优化提示词</button><span class="status" role="status"></span><details><summary>查看或手动复制全文</summary><textarea id="follow" aria-label="复制看板优化提示词全文" readonly spellcheck="false">请在我本人资料库里，继续修改上一步建好的律智驾舱。先列出实际绑定的 12 张在线表，复用它们的表 ID、记录和读写逻辑。
+6. 一段不超过 10 行的「日常怎么用」</textarea></details></div><p class="links"><a href="https://www.workbuddy.cn/" target="_blank" rel="noopener">安装 WorkBuddy</a>　<a href="https://easyairoute-dev.github.io/workbuddy-classroom/law-workbench/build-prompt.txt" target="_blank" rel="noopener">查看完整建台提示词</a></p><p class="done"><b>完成标志</b>　资料库里能打开你自己的工作台；在页面新建一条待办后，能在【待办】在线表找到它。</p></div></section><section id="step2"><div class="num">2</div><div class="inside"><div class="where">Obsidian 和 WorkBuddy · 技能管理</div><h2>建本地知识库，安装归档技能</h2><p>电脑上打开 Obsidian，选择「创建新库」，取名“课堂知识库”。在库里新建“事务列表”文件夹。同步时选择的库根是“课堂知识库”这一层。</p><p>在 WorkBuddy 打开「技能 → 添加技能 → 上传技能」，选择下载的技能 ZIP。保留 ZIP 格式，安装后在新对话中启用。</p><p class="links"><a href="https://obsidian.md/download" target="_blank" rel="noopener">下载 Obsidian</a>　<a href="https://easyairoute-dev.github.io/workbuddy-classroom/law-workbench/archive-skill.zip" target="_blank" rel="noopener">下载课堂归档技能 ZIP</a></p><p class="done"><b>完成标志</b>　Obsidian 左侧能看见“事务列表”，WorkBuddy 已安装技能中有 obsidian-case-archive。</p></div></section><section id="step3"><div class="num">3</div><div class="inside"><div class="where">WorkBuddy · 已启用技能的对话</div><h2>把知识库连到自己的在线表</h2><p>在已启用技能的对话中，附上<b>你刚建的工作台页面</b>，输入<b>你自己的库根路径</b>（例如 E:\课堂知识库），再粘贴下方指令并发送。</p><div class="copy"><button type="button" data-copy="bind">复制连接与检查指令</button><span class="status" role="status"></span><details><summary>查看或手动复制全文</summary><textarea id="bind" aria-label="复制连接与检查指令全文" readonly spellcheck="false">请配置我已安装的 obsidian-case-archive 课堂版，关联我刚建好的律师工作台和 Obsidian 库。请读取本次对话中我附上的工作台页面，从实际绑定关系核对【事务】【文档与证据】【配置与规则】的表 ID，依次填入 sync_workbench.py 的 MATTERS_DB、DOCS_DB、CFG_DB。找到当前 WorkBuddy 内置 library 技能目录，配置 DEFAULT_LIBRARY。确认本机可用 Python 3.10+ 和 PyYAML 6.x，核对材料ID（文本）及档案栏目（单选）。使用我提供的库根路径运行 --dry-run，报告库路径、三张表名称和读取结果。若我忘了附工作台或库根路径，先问我。</textarea></details></div><p>若提示缺少 Python 或 PyYAML，按学员手册第 2 页安装，然后重试。</p><p class="done"><b>完成标志</b>　WorkBuddy 回报正确的库根路径，并能读到【事务】【文档与证据】【配置与规则】。空库扫描到 0 个项目也正常。</p></div></section><section id="step4"><div class="num">4</div><div class="inside"><div class="where">WorkBuddy · 继续上一步的对话</div><h2>导入五份样例，打开事务档案</h2><p>下载并<b>解压</b>练习材料 ZIP。把里面的 Word、PDF、Excel、PNG 和 TXT 五个文件一起拖入上一步的 WorkBuddy 对话，粘贴下面的指令并发送。</p><p class="links"><a href="https://easyairoute-dev.github.io/workbuddy-classroom/law-workbench/sample-files.zip" target="_blank" rel="noopener">下载五份练习材料 ZIP</a></p><div class="copy"><button type="button" data-copy="archive">复制五份样例归档指令</button><span class="status" role="status"></span><details><summary>查看或手动复制全文</summary><textarea id="archive" aria-label="复制五份样例归档指令全文" readonly spellcheck="false">请用 obsidian-case-archive 把随本条消息发送的五份虚构样例归入“青禾设备采购”。按内容给材料目录起中文名，保留来源和原件。归档成功后，把项目和材料索引同步到我已绑定的在线工作台，从原表回读事务名称、材料数和各栏目数量。重复材料只记一次，保留已有人工分类。</textarea></details></div><p class="done"><b>完成标志</b>　刷新工作台，进入【事务跟进 → 事务列表 → 青禾设备采购 → 打开档案】。首次在空库应看到 5 份材料，电话记录在【沟通记录】。</p></div></section><details class="extra"><summary>选做：完善档案分栏和日历</summary><p>已有工作台需要调整「打开档案」或日历时，在原工作台的编辑对话粘贴下面的指令。</p><div class="copy"><button type="button" data-copy="follow">复制看板优化提示词</button><span class="status" role="status"></span><details><summary>查看或手动复制全文</summary><textarea id="follow" aria-label="复制看板优化提示词全文" readonly spellcheck="false">请在我本人资料库里，继续修改上一步建好的律智驾舱。先列出实际绑定的 12 张在线表，复用它们的表 ID、记录和读写逻辑。
 1. 保留主页看板、今日待办、灵感速记、事务跟进、每周复盘和配置备份。日历日期格展示两条未完成事项和剩余数，点击有事项的日期能查看当天全部完整标题。
 2. 在线页面启动或刷新要从原表重查。事务列表显示在线事务，“打开档案”用当前事务的在线记录 ID 查材料，保留已有沟通、费用和结案记录。
 3. 给文档与证据表补两列（已有则复用）：材料ID用文本，档案栏目用单选，选项为文档与证据、沟通记录、费用台账、结案归档与沉淀。每份材料在该表只有一条记录。四个栏目按现有档案栏目展示；旧记录缺栏目时可按材料类型、名称推断。保留手动登记入口。发票、收据作为费用栏目关联材料，不能由此自动产生费用金额；函件和沟通纪要进入沟通栏目。待确认的提交状态要保留原语义。
