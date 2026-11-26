@@ -18,9 +18,16 @@
 
 开工前，先看这个参考页面（很重要，能省你一半工作量）
 
-已经做好的一套在这里：
+这是一个公开分享的前端页面，请不要用资料库/知识库连接器读它
+（那样会报 12607 权限错误，你也没有该空间权限）。
 
-[https://www.workbuddy.cn/space/d/LKsuRoRuXVOD0PVBldajSe](https://www.workbuddy.cn/space/d/LKsuRoRuXVOD0PVBldajSe)
+请改用浏览器打开下面这个网址，等页面完全加载、数据渲染出来后，
+再读取页面上可见的文字：
+https://workbuddy.link/p/LKsuRoRuXVOD0PVBldajSe?source=2
+
+它是单页应用，直接抓 HTML 只能拿到约 5.8KB 的空壳（只有标题），
+必须等 JS 渲染完成。左侧有五个菜单，请逐个点开看：
+主页看板、今日待办、灵感速记、事务跟进、每周复盘。
 
 先打开看，再决定走哪条路。三种情况，按实际情况选，选完先告诉我你走哪条：
 
